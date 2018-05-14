@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Export csv file </title>
+</head>
+
+
+<body>
+
+    <div align="center">
+        <br> please select the serviceId
+        <br>
+        <br>
+        <input type="checkbox" name="service_19" value="19" id="serviceId_One" onclick="checkFirst"> service : 19
+        <input type="checkbox" name="service_20" value="20" id="serviceId_Two" onclick="checkSecond"> service : 20
+        <br>
+        <br>please select the substatus (true : when you need all the current subscribers , false: when you need all unsubscribers)
+        <br>
+        <br>
+        <input type="checkbox" name="status_true" id="statusIdTrue" value="true" onclick="status_First"> status : true
+        <input type="checkbox" name="status_false" id="statusIdFalse" value="false" onclick="status_Seconed">status : false
+        <br>
+        <br>the minCharge must be greater than or equal 1
+        <br>
+        <br>
+        <input type="text" name="minChargetext" id="minChargeId" value="number">
+
+        <div align="center">
+            <br>
+            <input type="submit" name="button" id="go" onclick="processCsv">
+        </div>
+        <br>
+        <textarea id="ExecuteCsv" placeholder="Execute Command" rows="1" cols="70" style="border: none ; " wrap="hard"></textarea>
+        <br>
+        <textarea id="CompressCsv" placeholder="Compress File" rows="1" cols="70" style="border: none ; " wrap="hard"></textarea>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- <script>
+        var socket = io.connect('http://127.0.0.1:4000');
+
+        function checkFirst() {
+            socket.emit('checkFirst', {});
+        }
+
+        function status_First() {
+            socket.emit('status_First', {});
+        }
+
+        var minChargeNumber = () => {
+            socket.emit('minChargeId', {});
+        };
+
+
+    </script>-->
+
+</body>
+
+</html>
